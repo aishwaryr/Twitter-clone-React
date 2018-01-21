@@ -1,12 +1,19 @@
+body {
+  background: rgb(231, 244, 249) !important;
+}
+
 .nav-bar {
   width: 100%;
   background: rgb(255, 80, 162);
 }
 
+
+
 .compose-tweet {
-  background: rgb(231, 244, 249);
+  background: #fff;
   border-radius: 4px;
   padding: 30px;
+  margin-bottom: 10px;
 }
 
 .compose-tweet textarea {
@@ -14,4 +21,25 @@
   margin: auto;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.tweet-list {
+  border-top: 1px solid rgb(172, 169, 169);
+  border-bottom: 1px solid rgb(172, 169, 169);
+  background: #fff;
+  padding: 10px;
+}
+
+.tweeter-pic {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+}
+
+.tweeter-name {
+  margin-bottom: 0px !important;
+}
+
+.show-inline {
+  display: inline;
 }
