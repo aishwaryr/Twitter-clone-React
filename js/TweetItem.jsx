@@ -1,10 +1,9 @@
 // @flow
 
 import React from "react";
-import { Link } from "react-router-dom";
-// import Tweet from "./Tweet";
+import Header from "./Header";
 
-const TweetList = (props: Tweet) => {
+const TweetItem = (props: { tweet: Tweet }) => {
   const {
     // Below code is ES6 destructuring not flow types or objects
     first_name: firstName,
@@ -13,9 +12,12 @@ const TweetList = (props: Tweet) => {
     tweet,
     likes,
     retweets
-  } = props;
+  } = props.tweet;
+  // console.log(props);
+  // TODO :: take the below HTML and make a seperate Comp to be used in tweetlist also
   return (
-    <Link to={`/tweet/${props.id}`} className="tweet-list-link">
+    <div>
+      <Header />
       <div className="tweet-list">
         <div className="container-fluid">
           <div className="row">
@@ -44,10 +46,8 @@ const TweetList = (props: Tweet) => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
-// TODO: Add link on tweet-list
-
-export default TweetList;
+export default TweetItem;

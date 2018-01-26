@@ -43,3 +43,8 @@ body {
 .show-inline {
   display: inline;
 }
+
+.tweet-list-link, .tweet-list-link:hover {
+  color: rgb(26, 22, 22);
+  text-decoration: none;
+}
