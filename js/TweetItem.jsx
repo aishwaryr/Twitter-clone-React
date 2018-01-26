@@ -11,7 +11,8 @@ const TweetItem = (props: { tweet: Tweet }) => {
     profile_picture: profilePicture,
     tweet,
     likes,
-    retweets
+    retweets,
+    replies
   } = props.tweet;
   // console.log(props);
   // TODO :: take the below HTML and make a seperate Comp to be used in tweetlist also
@@ -34,13 +35,13 @@ const TweetItem = (props: { tweet: Tweet }) => {
               </p>
               <p>{tweet}</p>
               <p className="show-inline">
-                <strong>{"?"}</strong>:777
+                <i className="fas fa-retweet" /> {retweets}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
               <p className="show-inline">
-                <strong>{"><"}</strong>:{retweets}
+                <i className="fas fa-reply" /> {replies}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
               <p className="show-inline">
-                <strong>{"<3"}</strong>:{likes}
+                <i className="fas fa-heart" /> {likes}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </div>

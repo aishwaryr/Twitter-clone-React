@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-// import Tweet from "./Tweet";
 
 const TweetList = (props: Tweet) => {
   const {
@@ -12,7 +11,8 @@ const TweetList = (props: Tweet) => {
     profile_picture: profilePicture,
     tweet,
     likes,
-    retweets
+    retweets,
+    replies
   } = props;
   return (
     <Link to={`/tweet/${props.id}`} className="tweet-list-link">
@@ -32,13 +32,13 @@ const TweetList = (props: Tweet) => {
               </p>
               <p>{tweet}</p>
               <p className="show-inline">
-                <strong>{"?"}</strong>:777
+                <i className="fas fa-retweet" /> {retweets}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
               <p className="show-inline">
-                <strong>{"><"}</strong>:{retweets}
+                <i className="fas fa-reply" /> {replies}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
               <p className="show-inline">
-                <strong>{"<3"}</strong>:{likes}
+                <i className="fas fa-heart" /> {likes}
               </p>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </div>
