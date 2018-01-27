@@ -8,14 +8,17 @@ import Data from "./Data";
 import FourOhFour from "./FourOhFour";
 import preload from "../data.json";
 import TweetItem from "./TweetItem";
+import { makeTweetObject } from "./helpers";
 
-console.log(preload.tweets);
+// console.log(preload.tweets);
+
 class App extends Component {
   state = {
     tweets: preload.tweets
   };
-  handleNewTweet = (newTweet: Tweet) => {
-    const newTweetArray = preload.tweets.unshift(newTweet);
+  handleNewTweet = (newTweet: string) => {
+    // const newTweetArray = preload.tweets.unshift(newTweet);
+    const newTweetArray = [makeTweetObject(newTweet)].concat(this.state.tweets);
     this.setState({ tweets: newTweetArray });
   };
   render() {
@@ -27,14 +30,18 @@ class App extends Component {
               exact
               path="/"
               component={props => (
-                <Feed tweets={this.state.tweets} {...props} />
+                <Feed
+                  tweets={this.state.tweets}
+                  handleNewTweet={this.handleNewTweet}
+                  {...props}
+                />
               )}
             />
             <Route
               path="/tweet/:id"
               component={(props: { match: Match }) => {
                 const selectedTweet = this.state.tweets.find(
-                  tweet => props.match.params.id === tweet.id.toString()
+                  tweet => props.match.params.id === tweet.id
                 );
                 return <TweetItem tweet={selectedTweet} {...props} />;
               }}
