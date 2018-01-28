@@ -7,7 +7,7 @@ import Feed from "./Feed";
 import Data from "./Data";
 import FourOhFour from "./FourOhFour";
 import preload from "../data.json";
-import TweetItem from "./TweetItem";
+import TweetThread from "./TweetThread";
 import { makeTweetObject } from "./helpers";
 
 // console.log(preload.tweets);
@@ -43,7 +43,7 @@ class App extends Component {
                 const selectedTweet = this.state.tweets.find(
                   tweet => props.match.params.id === tweet.id
                 );
-                return <TweetItem tweet={selectedTweet} {...props} />;
+                return <TweetThread tweet={selectedTweet} {...props} />;
               }}
             />
             <Route path="/data" component={Data} />

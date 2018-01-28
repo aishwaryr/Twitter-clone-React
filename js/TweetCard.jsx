@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TweetList = (props: Tweet) => {
+const TweetCard = (props: Tweet) => {
   const {
     // Below code is ES6 destructuring not flow types or objects
     first_name: firstName,
@@ -48,6 +48,4 @@ const TweetList = (props: Tweet) => {
   );
 };
 
-// TODO: Add link on tweet-list
-
-export default TweetList;
+export default TweetCard;
