@@ -30,12 +30,14 @@ class ComposeTweet extends Component {
           />
         </div>
         <div className="row">
-          <button
-            className="btn btn-success btn-block"
-            onClick={this.handleClick}
-          >
-            Tweet
-          </button>
+          <div className="col-md-3 offset-9">
+            <button
+              className="btn btn-success btn-block"
+              onClick={this.handleClick}
+            >
+              Tweet
+            </button>
+          </div>
         </div>
       </div>
     );

@@ -4,7 +4,19 @@ body {
 
 .nav-bar {
   width: 100%;
-  background: rgb(255, 80, 162);
+  background: rgb(196, 30, 107);
+}
+
+.nav-bar ul{
+  list-style: none;
+}
+
+.nav-bar li{
+  display: inline;
+}
+
+#compose-tweet-btn {
+  float: right;
 }
 
 
