@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import type { Match } from "react-router-dom";
 import Feed from "./Feed";
 import Data from "./Data";
+import RandomGif from "./RandomGif";
 import FourOhFour from "./FourOhFour";
 import preload from "../data.json";
 import TweetThread from "./TweetThread";
@@ -39,6 +40,7 @@ class App extends Component {
             />
             <Route
               path="/tweet/:id"
+              // eslint-disable-next-line react/no-unused-prop-types
               component={(props: { match: Match }) => {
                 const selectedTweet = this.state.tweets.find(
                   tweet => props.match.params.id === tweet.id
@@ -47,6 +49,7 @@ class App extends Component {
               }}
             />
             <Route path="/data" component={Data} />
+            <Route path="/gif" component={RandomGif} />
             <Route component={FourOhFour} />
           </Switch>
         </div>
