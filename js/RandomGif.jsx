@@ -8,13 +8,14 @@ import config from "../secret/config.json";
 class RandomGif extends Component {
   state = {
     gifUrl: "",
-    keyword: "Gal gadot",
-    giphyApiKey: config.giphy_api_key
+    keyword: "tom cruise",
+    giphyApiKey: config.giphy_api_key,
+    rating: "G"
   };
   componentDidMount() {
     axios
       .get(
-        `https://api.giphy.com/v1/gifs/random?api_key=${this.state.giphyApiKey}&tag=${this.state.keyword}&rating=R`
+        `https://api.giphy.com/v1/gifs/random?api_key=${this.state.giphyApiKey}&tag=${this.state.keyword}&rating=${this.state.rating}`
       )
       .then((response: { data: { data: { image_url: string } } }) => {
         // console.log(response);
