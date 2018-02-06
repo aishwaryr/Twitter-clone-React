@@ -8,7 +8,7 @@ import config from "../secret/config.json";
 class RandomGif extends Component {
   state = {
     gifUrl: "",
-    keyword: "tom cruise",
+    keyword: "pokemon",
     giphyApiKey: config.giphy_api_key,
     rating: "G"
   };

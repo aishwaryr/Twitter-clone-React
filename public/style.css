@@ -60,3 +60,11 @@ body {
   color: rgb(26, 22, 22);
   text-decoration: none;
 }
+
+.pink-like-icon {
+  color: rgb(199, 69, 90);
+}
+
+.blue-like-icon {
+  color: rgb(43, 43, 167);
+}
