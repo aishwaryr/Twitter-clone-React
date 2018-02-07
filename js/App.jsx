@@ -45,7 +45,13 @@ class App extends Component {
                 const selectedTweet = this.state.tweets.find(
                   tweet => props.match.params.id === tweet.id
                 );
-                return <TweetThread tweet={selectedTweet} {...props} />;
+                return (
+                  <TweetThread
+                    tweet={selectedTweet}
+                    handleNewTweet={this.handleNewTweet}
+                    {...props}
+                  />
+                );
               }}
             />
             <Route path="/data" component={Data} />

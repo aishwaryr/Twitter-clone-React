@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-responsive-modal";
+import ComposeTweet from "./ComposeTweet";
 
 class Header extends Component {
   state = {
@@ -17,6 +18,7 @@ class Header extends Component {
     this.setState({ open: false });
   };
 
+  props: { handleNewTweet: Function };
   render() {
     return (
       <div className="nav-bar">
@@ -33,7 +35,7 @@ class Header extends Component {
           </li>
         </ul>
         <Modal open={this.state.open} onClose={this.onCloseModal} little>
-          <h2>Simple centered modal</h2>
+          <ComposeTweet handleNewTweet={this.props.handleNewTweet} />
         </Modal>
       </div>
     );

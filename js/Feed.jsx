@@ -7,7 +7,7 @@ import TweetCard from "./TweetCard";
 
 const Feed = (props: { tweets: Array<Tweet>, handleNewTweet: Function }) => (
   <div className="feed">
-    <Header />
+    <Header handleNewTweet={props.handleNewTweet} />
     <div className="col-md-6 offset-md-3">
       <ComposeTweet handleNewTweet={props.handleNewTweet} />
       <div>
